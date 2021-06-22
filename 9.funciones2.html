@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="numero1">
+        <input type="text" id="numero2">
+        <input type="button" value="Sumar" onclick="alert(suma());"> 
+    </form>
+    <script>
+        var suma = function(numero1a, numero2a){
+            var numero1a = parseFloat(document.getElementById("numero1").value);
+            var numero2a = parseInt(document.getElementById("numero2").value);             
+            var resultado = numero1a + numero2a;
+            return resultado;
+        }
+
+
+    </script>
+</body>
+</html>

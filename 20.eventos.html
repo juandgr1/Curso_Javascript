@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <style>
+        .enlace{
+            font-family: 'Trebuchet MS';
+            font-size: medium;
+            color: orchid;
+        }
+    </style>
+</head>
+<body>
+    <button id="botonAlerta">boton-alerta</button>
+    <input type="text" id="input">
+    <br>
+    <button id="boton">boton</button>
+    <input type="text" id="input2">
+    <br>
+    <input type="text" id="input3">
+    <br>
+    <a id=boton3 href="https://www.eltiempo.com"> Enlace a el Tiempo.com</a>
+    <script>
+        (function() {
+            var alerta = function(e){
+                alert("Alerta");
+                console.log("evento de alerta")
+                console.log("este evento es de tipo: ", e.type)
+                console.log("el target de este evento es: ", e.target)
+            };
+            var enfocar2 = function(e){
+                console.log("Evento enfocar activado");
+            };
+            var desenfocar = function(e){
+                console.log("evento desenfocar 'blur' activado");
+            };
+            var cambio = function(e){
+                console.log("evento de deteccion de cambio del formulario")
+            };
+            var noDefault = function(e){
+                console.log("previniendo el comportamiento default del hypervinculo");
+                e.preventDefault();
+            };
+        
+        var botonAlerta = document.getElementById("botonAlerta");
+        botonAlerta.addEventListener("click", alerta);
+       
+        var input = document.getElementById("input");
+        input.addEventListener("focus", enfocar2);
+        input.addEventListener("change", cambio);
+        input.addEventListener("blur", desenfocar);
+        
+        var input2 = document.getElementById("input2");
+        input2.addEventListener("blur", desenfocar);
+        
+        var input3 = document.getElementById("input3");
+        input3.addEventListener("change", cambio);
+
+        var boton3 = document.getElementById("boton3");
+        boton3.addEventListener("click", noDefault);
+    }())
+        
+        // en este apartado se agrega lo que es una funcion anonima como ejemplo
+        
+        // boton.addEventListener("click", function() {                
+            //     console.log("Funciono! ");
+            // });
+    </script>
+</body>
+<br>
+<br>
+
+ enlaces con información de los eventos de html
+ <br>
+ <br>
+ <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDZVdWlJS25iQVB0V0hNMU5zdHJzNW5lcEJOd3xBQ3Jtc0tsVVZ6VGIxOThpRDVxLWFlVTM2NUg3WUJ2a3Z1eU1uanZWeENJS2d1UmN2RTFkVms5aTZpRzVmenpuOFdfRlBqc2VZY0oxd2MzZ1VzYjVWVmhBUDBTV0Vpd2NmcjF0cTF5ZVBiTkJVSVFYNklVaWlXUQ&q=http%3A%2F%2Fwww.w3schools.com%2Fjsref%2Fdom_obj_event.asp"> Enlace externo a información de eventos</a>
+<p class="enlace">Este es el enlace 
+    https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbDZVdWlJS25iQVB0V0hNMU5zdHJzNW5lcEJOd3xBQ3Jtc0tsVVZ6VGIxOThpRDVxLWFlVTM2NUg3WUJ2a3Z1eU1uanZWeENJS2d1UmN2RTFkVms5aTZpRzVmenpuOFdfRlBqc2VZY0oxd2MzZ1VzYjVWVmhBUDBTV0Vpd2NmcjF0cTF5ZVBiTkJVSVFYNklVaWlXUQ&q=http%3A%2F%2Fwww.w3schools.com%2Fjsref%2Fdom_obj_event.asp
+</p>
+ </html>
+

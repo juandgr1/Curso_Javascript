@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers Timeout e Interval</title>
+</head>
+<body>
+    
+    <script>
+
+        (function(){
+            var contador = 0;
+            //timeout
+                var saludo = function(){
+                    console.log('saludo Timeout!');
+                };
+                var saludo2 = function(){
+                    console.log('saludo Interval!');
+                    document.write(contador);
+                    
+                    contador = contador ++;
+                    if (contador === 10) {
+                        clearInterval(intervalo);
+                    };
+                };
+
+                // el tiempo se da en milisegundos, en este caso se espera 5 segundos para ejecutar
+                setTimeout(saludo, 5000);
+            //interval
+                //premite ejecutar codigo cada cierto tiempo
+
+                var intervalo = setInterval(saludo2, 1000);
+
+        }())
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    <ol id="lista"> 
+        <li>Lorem ipsum dolor sit amet.</li>
+        <li>asperidos and, auad fuga . </li>    
+    </ol>
+    <script>
+        var elemento = document.createElement("li");
+        var contenido = document.createTextNode("Nuevo Texto");
+        elemento.appendChild(contenido);
+        
+        var padre = document.getElementsByTagName("li")[0].parentNode;
+        // este elemento es igual al que se escribe abajo
+        var padre1 = document.getElementById("lista");
+      //  padre.appendChild(elemento);  // este append child agrega el elemento al final
+        var primerElemento = document.getElementsByTagName("li")[0];
+        padre.insertBefore(elemento, primerElemento);
+    </script>
+</body>
+</html>

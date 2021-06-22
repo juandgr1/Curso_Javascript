@@ -1,0 +1,1 @@
+alert("prueba desde el file js");
