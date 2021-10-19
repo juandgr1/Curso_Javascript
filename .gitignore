@@ -3,3 +3,4 @@
 .vscode/.ropeproject/config.py
 test_python.py
 pruebajson.json
+.DS_Store
